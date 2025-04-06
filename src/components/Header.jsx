@@ -21,6 +21,28 @@ export default function Header() {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
+    const notificationItems = [
+        { text: 'Notification 1', href: '#' },
+        { text: 'Notification 2', href: '#' },
+        { text: 'Notification 3', href: '#' },
+    ];
+
+    const menuItems = [
+        { text: 'Academic Tracker', href: '#' },
+        { text: 'Grades', href: '#' },
+        { text: 'Clearance', href: '#' },
+        { text: 'Retention History', href: '#' },
+        { text: 'Test Result', href: '#' },
+        { text: 'Account', href: '#' },
+    ];
+
+    const profileItems = [
+        { text: 'My Profile', href: '#' },
+        { text: 'My Account', href: '#' },
+        { text: 'Change Password', href: '#' },
+        { text: 'Logout', href: '#' },
+    ];
+
     return (
         <header className="flex h-14 items-center justify-between bg-[#1B8756] p-2.5 text-white w-full fixed-top" style={{ zIndex: 4 }}>
             <div className="flex items-center">
@@ -54,9 +76,9 @@ export default function Header() {
                     </button>
                     <ul className="dropdown-menu text-sm dropdown-menu-end">
                         <header className="ml-1.5 mb-1">Notifications</header>
-                        <li><a className="dropdown-item" href="#">Notification 1</a></li>
-                        <li><a className="dropdown-item" href="#">Notification 2</a></li>
-                        <li><a className="dropdown-item" href="#">Notification 3</a></li>
+                        {notificationItems.map((item, index) => (
+                            <li key={index}><a className="dropdown-item" href={item.href}>{item.text}</a></li>
+                        ))}
                         <footer className="m-1 text-center">See All Notifications</footer>
                     </ul>
                 </div>
@@ -66,12 +88,9 @@ export default function Header() {
                         <img className="w-4 invert" src={menu} alt="" />
                     </button>
                     <ul className="dropdown-menu text-sm dropdown-menu-end">
-                        <li><a className="dropdown-item" href="#">Academic Tracker</a></li>
-                        <li><a className="dropdown-item" href="#">Grades</a></li>
-                        <li><a className="dropdown-item" href="#">Clearance</a></li>
-                        <li><a className="dropdown-item" href="#">Retention History</a></li>
-                        <li><a className="dropdown-item" href="#">Test Result</a></li>
-                        <li><a className="dropdown-item" href="#">Account</a></li>
+                        {menuItems.map((item, index) => (
+                            <li key={index}><a className="dropdown-item" href={item.href}>{item.text}</a></li>
+                        ))}
                     </ul>
                 </div>
 
@@ -80,13 +99,12 @@ export default function Header() {
                         <img className="w-4 invert rounded-circle" src={avatar} alt="" />
                     </button>
                     <ul className="dropdown-menu dropdown-menu-end">
-                        <li><a className="dropdown-item" href="#">My Profile</a></li>
-                        <li><a className="dropdown-item" href="#">My Account</a></li>
-                        <li><a className="dropdown-item" href="#">Change Password</a></li>
-                        <li><a className="dropdown-item" href="#">Logout</a></li>
+                        {profileItems.map((item, index) => (
+                            <li key={index}><a className="dropdown-item" href={item.href}>{item.text}</a></li>
+                        ))}
                     </ul>
                 </div>
-            </nav>  
+            </nav>
         </header>
     );
 }

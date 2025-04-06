@@ -5,13 +5,13 @@ export default function Sidebar({ onClose, isOpen }) {
     const sidebarClasses = `col-6 col-md-3 col-xl-2 px-sm-2 px-0 fixed top-0 start-0 vh-100 bg-[#ffffff] z-40 transition-transform duration-300 ease-in-out left-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`;
 
     const navItems = [
-        { text: 'My Dashboard', icon: 'bi-house', href: '#' },
-        { text: 'My Classes', icon: 'bi-journals', href: '#' },
-        { text: 'My Schedule', icon: 'bi-calendar-week', href: '#' },
-        { text: 'My Calendar', icon: 'bi-calendar', href: '#' },
-        { text: 'My Registration Form', icon: 'bi-file-earmark-text', href: '#' },
-        { text: 'My Library', icon: 'bi-book', href: '#' },
-    ];
+        { text: 'My Dashboard', href: '#' },
+        { text: 'My Classes', href: '#' },
+        { text: 'My Schedule', href: '#' },
+        { text: 'My Calendar', href: '#' },
+        { text: 'My Registration Form',  href: '#' },
+        { text: 'My Library', href: '#' },
+    ]
 
     return (
         <div className={sidebarClasses}>
@@ -47,7 +47,7 @@ export default function Sidebar({ onClose, isOpen }) {
                     {navItems.map((item, index) => (
                         <li className="nav-item" key={index}>
                             <a href={item.href} className="nav-link align-middle px-0 text-black">
-                                <i className={`fs-4 bi ${item.icon}`}></i> <span className="ms-1 text-black">{item.text}</span>
+                                <i className={`fs-4 bi`}></i> <span className="ms-1 text-black">{item.text}</span>
                             </a>
                         </li>
                     ))}
